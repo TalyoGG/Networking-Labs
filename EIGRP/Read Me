@@ -1,1 +1,27 @@
+🔁 Dynamic Routing with VLSM Across 5 Offices
+This project sets up a network of five offices using dynamic routing protocols combined with Variable Length Subnet Masking (VLSM) for efficient IP address allocation based on each office's host requirements.
+
+
+📘 Project Summary
+Configured dynamic routing (EIGRP) across 5 interconnected offices.
+
+Utilized VLSM to accurately assign subnet sizes based on the number of hosts required in each branch.
+
+Ensured full connectivity between all offices with automatic route propagation.
+
+
+⚙️ Technologies Used
+Cisco Packet Tracer / GNS3 / Real Routers
+
+IPv4 addressing with VLSM
+
+Dynamic Routing Protocol (e.g., OSPF, RIP, or EIGRP)
+
+Router CLI configuration
+
+
+🔧 How It Works
+Routing Configuration: A dynamic routing protocol is configured on all routers to share network routes automatically.
+
+Verification: Connectivity tested via ping and traceroute across all devices and subnets.
 
