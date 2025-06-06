@@ -1,1 +1,27 @@
+🌐 Static Routing with VLSM Across 5 Offices
+This project demonstrates the configuration of default static routing across five branch offices using VLSM (Variable Length Subnet Masking) to efficiently allocate IP address space according to the specific host requirements of each office.
 
+
+📁 Project Overview
+Configured a default static routing setup to ensure connectivity between all five offices.
+
+Implemented VLSM subnetting to assign appropriate subnet sizes based on the number of required hosts in each office.
+
+Ensured efficient IP address utilization while maintaining proper inter-office communication.
+
+
+🛠️ Technologies Used
+Cisco Packet Tracer (or GNS3 / real hardware)
+
+IPv4 addressing
+
+Static routing configuration via CLI
+
+VLSM planning and implementation
+
+
+🔧 How to Use
+
+Open the project in your network simulation tool (GNS3).
+
+Test connectivity using the ping command between devices in different offices.
