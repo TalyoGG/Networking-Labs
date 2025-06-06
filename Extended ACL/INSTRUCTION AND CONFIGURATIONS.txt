@@ -1,0 +1,29 @@
+INSTRUCTION AND CONFIGURATIONS: 
+
+OBJECTIVES: 
+1. ALLOW THE ENTIRE NETWORK 192.168.10.0 /24 TO TELNET R1's IP ADDRESS 130.60.50.2 /24
+
+2. ALLOW THE ENTIRE NETWORK 172.16.10.0 /24 TO TELNET R1's IP ADDRESS 192.168.10.1 /24 EXCEPT FOR THESE IP ADDRESSES:  172.16.10.16 /24 TO 172.16.10.32 /24
+
+3. ALLOW ALL NETWORKS TO ACCESS R1's MAIL SERVER (PORT 25) ON IP ADDRESS 192.168.20.1 /24
+
+4. ALLOW THESE IP ADDRESSES 172.16.20.8 /24 TO 172.16.20.15 /24 TO ACCESS R1's WEB SERVER (PORT 80) ON IP ADDRESS 192.168.30.1 /24
+
+
+###########################
+#   All password: cisco   #
+###########################
+
+###########################################
+CONFIGURATIONS: 
+
+
+
+access-list 100 permit tcp 192.168.10.0 0.0.0.255 host 130.60.50.2 eq 23
+access-list 100 deny tcp 172.16.10.16 0.0.0.15 host 192.168.10.1 eq 23
+access-list 100 permit tcp 172.16.10.0 0.0.0.255 host 192.168.10.1 eq 23
+access-list 100 permit tcp any host 192.168.20.1 eq 25
+access-list 100 permit tcp 172.16.20.8 0.0.0.7 host 192.168.30.1 eq 80
+!
+access-list 100 permit ospf any any 
+access-list 100 permit icmp any any 
