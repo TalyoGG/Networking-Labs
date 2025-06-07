@@ -1,1 +1,34 @@
+🔐 GRE Tunnel VPN with OSPF over Public ISP
+This project demonstrates the configuration of a GRE Tunnel VPN between two routers over a public ISP network, with OSPF (Open Shortest Path First) used to establish dynamic routing and neighbor adjacency over the tunnel.
+
+📘 Project Summary
+Configured a GRE (Generic Routing Encapsulation) tunnel between two routers across separate networks connected through an ISP.
+
+Enabled OSPF as the dynamic routing protocol over the GRE tunnel.
+
+Successfully formed OSPF neighbor adjacency across the tunnel.
+
+Ensured seamless internal routing between LAN segments on both ends of the tunnel.
+
+🛠️ Technologies Used
+Cisco IOS (Packet Tracer)
+
+GRE Tunnel
+
+OSPF 
+
+🔧 How It Works
+GRE Tunnel was established between two routers using their respective public-facing interfaces.
+
+OSPF was configured on the tunnel interface to allow route exchange and neighbor adjacency.
+
+Devices on both sides of the tunnel are able to communicate dynamically through OSPF-learned routes over the GRE Tunnel
+
+✅ Verification
+Use ping between LAN devices on opposite ends to test connectivity.
+
+Run show ip ospf neighbor to confirm that adjacency has been established.
+
+Use show ip route to verify OSPF-learned routes via the GRE tunnel.
+
 
