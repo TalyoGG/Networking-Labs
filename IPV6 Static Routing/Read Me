@@ -1,0 +1,30 @@
+🌐 IPv6 Static Routing Across 3 Routers
+This project demonstrates the configuration of IPv6 static routing across a simple network topology involving three interconnected routers, using IPv6 global unicast and link-local addresses to enable full IPv6 routing.
+
+📘 Project Summary
+Configured IPv6 addressing on all interfaces across 3 routers.
+
+Set up static routes (::/0) to control traffic flow toward the Main Router (R2).
+
+Enabled end-to-end IPv6 connectivity between devices on different segments.
+
+🛠️ Technologies Used
+Cisco IOS GNS3
+
+IPv6 addressing and routing
+
+Static routing with IPv6
+
+ICMPv6 for testing connectivity
+
+🔧 How It Works
+Router2: Acts as the main gateway to each of the R1 and R3 networks.
+
+Router1 and Router3: Internal routers with static routes pointing to Router2.
+
+Static routes (::/0) are configured on Router1 and Router3 to send all traffic to Router2 using its IPv6 address as the next hop.
+
+✅ Verification
+Use the ping and traceroute (or traceroute ipv6) commands to confirm connectivity.
+
+Test with ICMPv6 or end device communication across subnets.
