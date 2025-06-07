@@ -1,1 +1,33 @@
+🔁 IPv6 Dynamic Routing Across 3 Routers
+This project demonstrates the configuration of a dynamic IPv6 routing protocol across a 3-router topology,
+enabling efficient and automated route exchange using IPv6 addressing.
+
+📘 Project Summary
+Configured IPv6 addressing on all router interfaces.
+
+Implemented a dynamic routing protocol (OSPFv3) across 3 routers.
+
+Enabled automatic route learning and advertisement between routers to simplify network scalability and management.
+
+🛠️ Technologies Used
+Cisco IOS via GNS3
+
+IPv6 addressing
+
+OSPFv3
+
+ICMPv6 for connectivity testing
+
+🔧 How It Works
+All routers are configured with global unicast IPv6 addresses on their interfaces.
+
+A dynamic routing protocol (OSPFv3) is enabled on each router.
+
+Routers exchange IPv6 routes automatically, eliminating the need for manual static routing.
+
+Devices connected to each router are able to communicate over IPv6 without manual route configuration.
+
+✅ Verification
+Use ping ipv6 between end devices to confirm full connectivity.
+
 
