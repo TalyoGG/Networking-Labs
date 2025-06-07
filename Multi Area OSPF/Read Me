@@ -23,7 +23,7 @@ R2 and R3 participate in OSPF Area 0, with R2 elected as DR and R3 as BDR based 
 
 Other routers in the area function as DROTHER routers.
 
-Additional areas (e.g., Area 64, Area 65) are created and connected via Area Border Routers (ABRs).
+Additional areas (e.g., Area 64, Area 55) are created and connected via Area Border Routers (ABRs).
 
 Routing tables are automatically populated and updated using OSPF LSAs (Link-State Advertisements).
 
