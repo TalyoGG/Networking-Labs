@@ -1,1 +1,28 @@
+🌐 Floating Static Route Configuration for Dual ISP Failover
+This project demonstrates the implementation of floating static routes on a local router connected to two different ISPs to achieve automatic failover in case the primary ISP becomes unreachable.
+
+📘 Project Summary
+Configured a primary static route pointing to the main ISP.
+
+Added a backup static route (with a higher administrative distance) pointing to a secondary ISP.
+
+Ensured redundant internet connectivity using static route prioritization.
+
+No need for dynamic routing protocols — simple and effective failover using administrative distance.
+
+🔧 How It Works
+The local router has two outbound paths:
+
+ISP 1: Primary link
+
+ISP 2: Secondary (backup) link
+
+A floating static route is created with a higher administrative distance, so it remains inactive unless the primary route fails.
+
+When the primary ISP link goes down, the router automatically switches to the backup route.
+
+🛠️ Technologies Used
+Cisco IOS CLI (via Packet Tracer, GNS3, or real hardware)
+
+Floating static route with increased AD
 
