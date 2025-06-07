@@ -1,1 +1,38 @@
 
+🌐 Multi-Area OSPF Network with DR/BDR Configuration
+This project demonstrates the configuration of a Multi-Area OSPF (Open Shortest Path First) network, including Designated Router (DR) and Backup Designated Router (BDR) roles within the backbone area (Area 0) for improved routing efficiency and scalability.
+
+📘 Project Summary
+Implemented a multi-area OSPF network to optimize routing across distinct network segments.
+
+Configured Area 0 as the backbone area.
+
+Assigned Router R2 as the Designated Router (DR) and Router R3 as the Backup Designated Router (BDR) in Area 0.
+
+Enabled OSPF on all interfaces connecting routers within their respective areas.
+
+🛠️ Technologies Used
+Cisco IOS via GNS3
+
+Multi-Area OSPF
+
+DR/BDR election
+
+🔧 How It Works
+R2 and R3 participate in OSPF Area 0, with R2 elected as DR and R3 as BDR based on priority or router ID.
+
+Other routers in the area function as DROTHER routers.
+
+Additional areas (e.g., Area 1, Area 2) are created and connected via Area Border Routers (ABRs).
+
+Routing tables are automatically populated and updated using OSPF LSAs (Link-State Advertisements).
+
+✅ Verification
+Use show ip ospf neighbor to verify DR/BDR roles in Area 0.
+
+Use show ip route ospf to confirm route propagation across areas.
+
+Use ping and traceroute to test end-to-end connectivity between routers in different OSPF areas.
+
+Shut down R2’s interface to test failover to R3 (BDR becomes DR).
+
