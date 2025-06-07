@@ -1,0 +1,27 @@
+🔄 VRRP Configuration: VRRP for ISP Failover
+This project showcases the implementation of Virtual Router Redundancy Protocol (VRRP) to ensure seamless failover between a primary and backup router toward the ISP.
+
+📘 Project Summary
+Implemented VRRP between two edge routers to provide gateway redundancy for internal network clients.
+
+Ensured automatic failover to a backup router in the event of primary router failure.
+
+Designed for improved network availability and business continuity at the edge of the network.
+
+🔧 How It Works
+A Virtual IP Address (VIP) is configured as the default gateway for hosts.
+
+The master router (highest priority) actively forwards traffic, while the backup router remains in standby mode.
+
+Upon failure of the master router, the backup router automatically takes over the VIP, maintaining uninterrupted connectivity to the ISP.
+
+🛠️ Technologies Used
+GNS3
+
+VRRP (Virtual Router Redundancy Protocol)
+
+Basic static routing toward the ISP
+
+✅ Verification
+Perform a continuous ping toward the FB Server terminated at the ISP, then shut down all active interfaces of the Main Router.
+Traffic should fail over automatically to the Backup Router, verifying proper VRRP functionality.
