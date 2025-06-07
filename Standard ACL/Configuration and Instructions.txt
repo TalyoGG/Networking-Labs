@@ -1,0 +1,46 @@
+Instruction in checking if the Standard ACL configured on R1 is correct: 
+
+OBEJCTIVES: 
+STANDARD ACL CONFIGURATION: 
+
+1. ALLOW NETWORK 130.60.50 /24 TO ACCESS R1
+
+2. ALLOW THE NETWORK 172.16.10.0 /24 TO ACCESS R1
+
+3. ALLOW THE ENTIRE NETWORK  172.16.20.0 /24 TO ACCESS R1 EXCEPT THE LOCAL HOST 172.16.20.1 /24
+
+4. DENY ALL OTHER NETWORKS 
+
+
+
+###########################
+#   All password: cisco   #
+###########################
+
+
+VERIFICATION: 
+1.
+
+- From R2, perform a normal ping toward to any of the interfaces on R1 ( S0/0/0, Loop0, Loop1, Loop2 ). You must get a ping reply from R1 --> Since the network address of the link connection R1 and R2 is permitted on R1. 
+
+- From R2, perform an extended ping to any of the interfaces on R1 ( S0/0/0, Loop0, Loop1, Loop2 ) using the loopback interfaces of R2 as source IP. You must not received a ping reply -->  Since the network address of the loopbacks of R2 is denied on R2
+
+
+2. 
+- From R3, perform an extended ping to any of the interfaces on R1 ( S0/0/0, Loop0, Loop1, Loop2 ) using the loopback 0 on R3 as source IP, you must get a ping reply from R1 --> Although the network address of the exiting interface of R3 is not permitted on R1, by performing an extended ping, we can bypass the default encapsulation process of R3. 
+
+
+3. 
+- From R3, perform an extended ping to any of the interfaces on R1 ( S0/0/0, Loop0, Loop1, Loop2 ) using the loopback1  on R3 as source IP (172.16.20.1), you must not get a ping reply from R1 --> Since it is not permitted on R1 
+
+
+#######################################
+
+R1 ACL CONFIGURATION: 
+
+access-list 10 permit 130.60.50.0 0.0.0.255
+access-list 10 permit 172.16.10.0 0.0.0.255
+access-list 10 deny host 172.16.20.1
+access-list 10 permit 172.16.20.0 0.0.0.255
+access-list 10 deny any
+
