@@ -1,1 +1,40 @@
+🔐 IPSec VPN Tunnel Over Public ISP Network
+This project demonstrates the configuration of a secure IPSec VPN tunnel between two routers over a public ISP network, ensuring encrypted communication between two private networks across an untrusted medium.
+
+📘 Project Summary
+Configured an IPSec site-to-site VPN tunnel between two routers.
+
+Established the tunnel over a simulated public ISP network.
+
+Encrypted traffic between private LANs to ensure data confidentiality and integrity.
+
+Enabled secure communication between geographically separated networks.
+
+🛠️ Technologies Used
+Cisco IOS via Packet Tracer
+
+IPSec (ISAKMP Phase 1 and Phase 2)
+
+Pre-shared key authentication
+
+ACLs to define interesting traffic
+
+🔧 How It Works
+Each router connects to the ISP via its public-facing interface.
+
+IPSec Phase 1 establishes a secure IKE policy using a pre-shared key.
+
+IPSec Phase 2 builds the IPSec tunnel to encrypt and decrypt traffic between LANs.
+
+Access Control Lists (ACLs) define which traffic should be encrypted ("interesting traffic").
+
+Hosts in both private networks can securely communicate as if they were in the same local network.
+
+✅ Verification
+Use ping between devices in the private LANs to confirm tunnel functionality.
+
+Use show crypto isakmp sa and show crypto ipsec sa to verify tunnel establishment.
+
+Confirm that traffic is being encrypted and decrypted across the tunnel.
+
 
