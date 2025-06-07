@@ -1,0 +1,95 @@
+Hierarchical Network Design with HSRP, EtherChannel, VTP, STP & Inter-VLAN Routing
+This project implements a three-layer hierarchical network architecture using core, distribution, and access layers, featuring technologies like HSRP, LACP EtherChannel, VTP, STP, port security, dynamic routing, and inter-VLAN routing to build a redundant, scalable, and secure LAN infrastructure.
+
+📘 Project Summary
+Designed a hierarchical network consisting of:
+
+🧠 Core Layer: 1 Router
+
+🛡️ Distribution Layer: 2 Layer 3 switches (L3 Switch 1 – Main, L3 Switch 2 – Backup)
+
+💡 Access Layer: 2 Access Switches
+
+Key configurations:
+
+✅ HSRP between both distribution switches (L3 Switches) for default gateway redundancy
+
+🔗 EtherChannel (LACP) on all inter-switch links
+
+🏷️ VTP (Server/Client) on switches for centralized VLAN propagation
+
+🛑 STP with L3 Switch 1 as the primary root bridge and L3 Switch 2 as secondary
+
+🔐 Port Security on all access layer interfaces
+
+🔄 Dynamic routing protocol between Core Router (R1) and Remote Router (R2) connecting to the remote server
+
+🔁 Inter-VLAN Routing enabled on Layer 3 switches
+
+🛠️ Technologies Used
+Cisco IOS via Packet Tracer
+
+Layer 3 Switching
+
+HSRP (Hot Standby Router Protocol)
+
+EtherChannel (LACP)
+
+VTP (VLAN Trunking Protocol)
+
+STP (Spanning Tree Protocol)
+
+Port Security
+
+Inter-VLAN Routing
+
+IPv4 & Dynamic Routing (e.g., OSPF, EIGRP)
+
+🔧 How It Works
+🔄 Redundancy
+HSRP provides gateway failover at the distribution layer.
+
+L3 Switch 1 is the Active HSRP device (primary), and L3 Switch 2 acts as Standby.
+
+🔗 Link Aggregation
+LACP-based EtherChannel groups are configured on all links between switches and between switches and the router.
+
+Enhances bandwidth and provides link redundancy.
+
+🧵 VLAN Management
+VTP Server is configured on L3 Switch 1 to manage and propagate VLANs.
+
+Access switches and L3 Switch 2 act as VTP clients.
+
+🧬 STP Topology
+L3 Switch 1 is manually set as the primary root bridge for all VLANs.
+
+L3 Switch 2 is set as the secondary root to take over if needed.
+
+🔐 Security
+Port security is enforced on access interfaces to prevent unauthorized device access.
+
+🌍 Routing
+Dynamic routing protocol (OSPF) is configured between R1 (Core) and R2 (Remote) for external connectivity.
+
+Inter-VLAN routing is implemented on L3 switches to enable host communication across VLANs.
+
+✅ Verification Tests
+1️⃣ EtherChannel Test (LACP)
+Perform a continuous ping from any local host to the remote server.
+
+Shut down one physical link in the EtherChannel group.
+
+Expected result: Ping should not be interrupted, proving successful LACP configuration.
+
+2️⃣ HSRP Failover Test
+Perform a continuous ping from a host to the gateway or server.
+
+Shut down all active interfaces of the Main L3 Switch.
+
+Expected result: Traffic should failover to the Backup L3 Switch, and connectivity remains uninterrupted.
+
+3️⃣ Inter-VLAN Routing Test
+Ping between hosts located in different VLANs.
+
+Expected result: Hosts should successfully communicate, verifying inter-VLAN routing.
