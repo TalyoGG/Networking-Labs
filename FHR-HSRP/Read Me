@@ -1,5 +1,5 @@
-🔄 FHRP Configuration: HSRP for ISP Failover
-This project showcases the implementation of First Hop Redundancy Protocol (FHRP) using Hot Standby Router Protocol (HSRP) to ensure seamless failover between a primary and backup router toward the ISP.
+🔄 HSRP Configuration: HSRP for ISP Failover
+This project showcases the implementation of Hot Standby Router Protocol (HSRP) to ensure seamless failover between a primary and backup router toward the ISP.
 
 📘 Project Summary
 Implemented HSRP between two edge routers to provide gateway redundancy for internal network clients.
@@ -9,9 +9,9 @@ Ensured automatic failover to a backup router in the event of primary router fai
 Designed for improved network availability and business continuity at the edge of the network.
 
 🔧 How It Works
-Virtual IP Address (VIP) is configured as the default gateway for hosts.
+A Virtual IP Address (VIP) is configured as the default gateway for hosts.
 
-Primary router actively forwards traffic (active role), while backup router remains on standby.
+The active router (highest priority) actively forwards traffic, while the standby router remains in backup mode.
 
 Upon failure of the active router, the standby router automatically takes over the VIP, maintaining uninterrupted connectivity to the ISP.
 
@@ -22,7 +22,6 @@ HSRP (Hot Standby Router Protocol)
 
 Basic static routing toward the ISP
 
-🔧 Verification
-
-Perfomr continuous ping towards the FB Server terminated at the ISP, then shut all active interface of the Main Router. Traffic must fail over to the Back Up router. 
-
+✅ Verification
+Perform a continuous ping toward the FB Server terminated at the ISP, then shut down all active interfaces of the Main Router.
+Traffic should fail over automatically to the Backup Router, verifying proper HSRP functionality.
